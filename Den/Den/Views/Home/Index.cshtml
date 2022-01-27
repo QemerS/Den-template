@@ -1,0 +1,168 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model HomeVm
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="~/assets/img/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase">
+                    <li class="nav-item">
+                        <a class="nav-link active bg-danger m-0 p-4 me-1 text-white" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  m-0 p-4 me-1" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  m-0 p-4 me-1" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  m-0 p-4 me-1" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  m-0 p-4 me-1" href="#">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  m-0 p-4 me-1" asp-controller="Account" asp-action="Register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  m-0 p-4 me-1" asp-controller="Account" asp-action="Login">Login</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+<footer>
+    <div class="container-fluid  bg-dark text-white ">
+        <div class="row ">
+            <div class="col-12">
+                <div class="container p-5">
+                    <div class="row">
+                        <p class="fw-bold fs-2">Contact Us</p>
+                        <div class="col-3">
+                            <p class="fw-bold fs-3">Address</p>
+
+                            <p>
+                                <span class="dashed-border"><i class="fas fa-map-marker-alt fs-4 p-3 icon-size text-center"></i></span>
+                                @foreach (var item in Model.Settings)
+                                    {
+                                        @item.Address
+                                    }
+                                    
+                                </p>
+    
+                            <p>
+
+                                <span class="dashed-border"><i class="fas fa-phone-alt fs-4 p-3 icon-size text-center"></i></span>
+                                @foreach (var item in Model.Settings)
+                                {
+                                    @item.Phone
+                                }
+                                
+                            </p>
+                            <p>
+                                <span class="dashed-border"><i class="fas fa-envelope fs-4 p-3 icon-size text-center"></i></span>
+                                @foreach (var item in Model.Settings)
+                                {
+                                    @item.Mail
+                                }
+                                
+                            </p>
+
+                        </div>
+                        <div class="col-3 bg-dark text-white">
+                            <p class="fw-bold fs-2">Useful Links</p>
+                            <ul class="list-style-none ps-0">
+                                <li class="square-list">
+                                    <span class="text-white ms-2">Bacerim Dictionary</span>
+                                </li>
+                                <li class="square-list">
+                                    <span class="text-white ms-2">Help Links</span>
+                                </li>
+                                <li class="square-list">
+                                    <span class="text-white ms-2">bacerim Attitudes</span>
+                                </li>
+                                <li class="square-list">
+                                    <span class="text-white ms-2">Call a Cutumer</span>
+                                </li>
+                                <li class="square-list">
+                                    <span class="text-white ms-2">Help a Bacerim</span>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="col-3 bg-dark text-white">
+                            <p class="fw-bold fs-3">Overview</p>
+                            <ul class="list-style-none ps-0">
+                                <li class="square-list">
+                                    <span class="text-white ms-2">Bacerim Dictionary</span>
+                                </li>
+                                <li class="square-list">
+                                    <span class="text-white ms-2">Help Links</span>
+                                </li>
+                                <li class="square-list">
+                                    <span class="text-white ms-2">bacerim Attitudes</span>
+                                </li>
+                            </ul>
+
+                            <div class="d-inline fs-1">
+                                @foreach (var item in Model.Socials)
+                                {
+                                    <a href="@item.Link" class="text-decoration-none text-white">
+                                        <i class="fab fa-@item.Name-square"></i> 
+                                    </a>
+                                }
+                                
+                            </div>
+                        </div>
+                        <div class="col-3 bg-dark text-white">
+                            <p class="fw-bold fs-3">
+                                Instagram
+                            </p>
+                            <div class="container m-0 p-0">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <img class="img-size" src="~/assets/img/footer-img1.png" alt="">
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <img class="img-size" src="~/assets/img/footer-img2.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <img class="img-size" src="~/assets/img/footer-img2.png" alt="">
+                                    </div>
+                                    <div class="col-6">
+                                        <img class="img-size" src="~/assets/img/footer-img3.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid pt-3">
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <p class="fw-bold text-center">
+                        2045 All Rights Reserved. <a href="#" class="text-decoration-none">HTML.Design</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,28 @@
+.dashed-border {
+    border-style: dashed;
+    border-color: orange;
+    display: inline-block;
+    border-width: 0.1px;
+}
+.square-list {
+    /* list-style-type:square;
+    color: orange; */
+
+    list-style: none;
+
+    
+}
+.square-list::before {
+    content: '';
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    background-image: url("../img/bulit-icon.png");
+}
+.img-size {
+    height: 100px;
+}
+.icon-size {
+    width: 60px;
+    height: 54px;
+}

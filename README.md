@@ -1,1 +1,1 @@
-# Den-template
+### Navbar and footer done.
